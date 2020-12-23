@@ -8,6 +8,13 @@
     <%= form.text_area :body %>
   </p>
   <p>
+    Status:
+    <% Article::VALID_STATUSES.each do |status| %>
+      <%= form.radio_button :status, status %>
+      <%= form.label "status_#{status}".to_sym, status.capitalize %>
+    <% end %>
+  </p>
+  <p>
     <%= form.submit %>
   </p>
 <% end %>

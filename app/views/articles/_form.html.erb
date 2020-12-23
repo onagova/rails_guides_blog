@@ -20,6 +20,16 @@
   <br>
 
   <div>
+    Status:
+    <% Article::VALID_STATUSES.each do |status| %>
+      <%= form.radio_button :status, status %>
+      <%= form.label "status_#{status}".to_sym, status.capitalize %>
+    <% end %>
+  </div>
+
+  <br>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

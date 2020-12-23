@@ -42,9 +42,13 @@ class ArticlesController < ApplicationController
     redirect_to root_path
   end
 
+  def index_archived
+    @articles = Article.all
+  end
+
   private
 
   def article_params
-    params.require(:article).permit(:title, :body)
+    params.require(:article).permit(:title, :body, :status)
   end
 end
