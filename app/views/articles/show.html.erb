@@ -16,3 +16,9 @@
 
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
+
+<% if @article.archived? %>
+  <%= link_to 'Back to Archived Articles List', '/articles/archived' %>
+<% else %>
+  <%= link_to 'Back to Articles List', articles_path %>
+<% end %>
